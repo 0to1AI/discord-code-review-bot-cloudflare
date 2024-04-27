@@ -1,0 +1,5 @@
+src/db/migrations/meta/
+coverage
+node_modules
+.pnpm-store
+dist

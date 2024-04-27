@@ -1,0 +1,10 @@
+node_modules/
+*.pem
+.env
+.wrangler
+*.tsbuildinfo
+coverage
+dist
+wrangler.toml
+worker-configuration.d.ts
+.dev.vars
