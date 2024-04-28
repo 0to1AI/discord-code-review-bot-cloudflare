@@ -11,14 +11,11 @@ importers:
         specifier: 1.1.0
         version: 1.1.0
       discord-api-types:
-        specifier: 0.37.82
-        version: 0.37.82
+        specifier: 0.37.83
+        version: 0.37.83
       openai:
         specifier: 4.38.5
         version: 4.38.5
-      tweetnacl:
-        specifier: 1.0.3
-        version: 1.0.3
     devDependencies:
       "@cloudflare/workers-types":
         specifier: 4.20240423.0
@@ -1176,10 +1173,10 @@ packages:
       }
     engines: { node: ">=8" }
 
-  discord-api-types@0.37.82:
+  discord-api-types@0.37.83:
     resolution:
       {
-        integrity: sha512-qye+lpqYz7USEWW2GGPqlC565NtWNNSzImQHO1WiPQOtvDnbyMjXWInHsa7LmRtXW8Etu2EbTIwD6PuOmhwiqA==,
+        integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==,
       }
 
   doctrine@2.1.0:
@@ -2740,12 +2737,6 @@ packages:
     engines: { node: ">=18.0.0" }
     hasBin: true
 
-  tweetnacl@1.0.3:
-    resolution:
-      {
-        integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==,
-      }
-
   type-check@0.4.0:
     resolution:
       {
@@ -3545,7 +3536,7 @@ snapshots:
     dependencies:
       path-type: 4.0.0
 
-  discord-api-types@0.37.82: {}
+  discord-api-types@0.37.83: {}
 
   doctrine@2.1.0:
     dependencies:
@@ -4603,8 +4594,6 @@ snapshots:
       get-tsconfig: 4.7.3
     optionalDependencies:
       fsevents: 2.3.3
-
-  tweetnacl@1.0.3: {}
 
   type-check@0.4.0:
     dependencies:

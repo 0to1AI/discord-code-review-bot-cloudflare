@@ -1,5 +1,4 @@
 import type { APIInteraction } from "discord-api-types/v10";
-import nacl from "tweetnacl";
 import { stringToUint8Array, concatUint8Arrays } from "@/utils.js";
 
 export const validateSignature = async (request: Request, env: Env): Promise<null | APIInteraction> => {
@@ -22,7 +21,8 @@ export const validateSignature = async (request: Request, env: Env): Promise<nul
 	const signatureData = stringToUint8Array(signature, "hex");
 	const publicKeyData = stringToUint8Array(env.DISCORD_APP_PUBLIC_KEY, "hex");
 
-	const isValid = nacl.sign.detached.verify(message, signatureData, publicKeyData);
+	const key = await crypto.subtle.importKey("raw", publicKeyData, "ED25519", false, ["verify"]);
+	const isValid = await crypto.subtle.verify("ED25519", key, signatureData, message);
 
 	if (!isValid) {
 		return null;
