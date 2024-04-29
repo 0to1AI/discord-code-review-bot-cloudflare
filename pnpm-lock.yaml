@@ -54,8 +54,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       wrangler:
-        specifier: 3.52.0
-        version: 3.52.0(@cloudflare/workers-types@4.20240423.0)
+        specifier: 0.0.0-327a4568
+        version: 0.0.0-327a4568(@cloudflare/workers-types@4.20240423.0)
 
 packages:
   "@aashutoshrathi/word-wrap@1.2.6":
@@ -2874,10 +2874,10 @@ packages:
     engines: { node: ">=16" }
     hasBin: true
 
-  wrangler@3.52.0:
+  wrangler@0.0.0-327a4568:
     resolution:
       {
-        integrity: sha512-HR06jTym+yr7+CI3Ggld3nfp1OM9vSC7h4B8vwWHwhi5K0sYg8p44rxV514Gmsv9dkFHegkRP70SM3sjuuxxpQ==,
+        integrity: sha512-fQ310bP9UBJhTZtisNPp9bMZIl29NPB5i5FPgag3T9vySZ38p5luNUnb0zxh/WAIYfyc3t4QedZASkTTpZT4nQ==,
       }
     engines: { node: ">=16.17.0" }
     hasBin: true
@@ -4693,7 +4693,7 @@ snapshots:
       "@cloudflare/workerd-linux-arm64": 1.20240419.0
       "@cloudflare/workerd-windows-64": 1.20240419.0
 
-  wrangler@3.52.0(@cloudflare/workers-types@4.20240423.0):
+  wrangler@0.0.0-327a4568(@cloudflare/workers-types@4.20240423.0):
     dependencies:
       "@cloudflare/kv-asset-handler": 0.3.2
       "@esbuild-plugins/node-globals-polyfill": 0.2.3(esbuild@0.17.19)

@@ -3,18 +3,18 @@ import OpenAI from "openai";
 import { type Ai } from "@cloudflare/ai";
 
 export async function workersAiReview(code: string, { ai }: { ai: Ai }) {
-	const results = (await ai.run("@hf/thebloke/codellama-7b-instruct-awq", {
+	const results = (await ai.run("@hf/thebloke/deepseek-coder-6.7b-instruct-awq", {
 		stream: false,
 		messages: [
 			{
 				role: "system",
 				content: [
-					`You're a senior software developer and your sole responsibility is to review code submissions.`,
+					"You're a senior software developer and your sole responsibility is to review code submissions.",
 					"Include information such as identified issues, recommendations for improvement, and areas of strength.",
-					"Your feedback should be easy to understand, and actionable to the developer.",
+					"Your feedback must be easy to understand and actionable to the developer.",
 					"Be pragmatic and constructive in your feedback. Do not nitpick on small issues.",
 					"Be concise.",
-				].join("\n"),
+				].join(" "),
 			},
 			{
 				role: "user",

@@ -28,8 +28,14 @@ export default {
 				return new Response(`Unknown command ${name}`, { status: 400 });
 			}
 
-			const result = await command.handler(interaction);
-			return Response.json(result);
+			try {
+				const result = await command.handler(interaction);
+				console.log(JSON.stringify(result, null, 2));
+				return Response.json(result);
+			} catch (e) {
+				console.error(e);
+				return new Response("Internal server error", { status: 500 });
+			}
 		}
 
 		if (interaction.type === InteractionType.ModalSubmit) {
