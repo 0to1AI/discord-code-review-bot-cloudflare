@@ -1,6 +1,6 @@
 # discord-code-review-bot
 
-Code Review bot for Discord implemented using Cloudflare Workers AI.
+Code Review bot for Discord implemented using Cloudflare Workers and Groq.
 
 👉 https://www.0to1ai.com
 

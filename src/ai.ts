@@ -38,8 +38,8 @@ export async function openAiReview(
 	const result = await openai.chat.completions.create({
 		// model: "gpt-4-turbo-preview",
 		// model: "mixtral-8x7b-32768",
-		// model: "gemma-7b-it",
-		model: "llama3-70b-8192",
+		model: "gemma-7b-it",
+		// model: "llama3-70b-8192",
 		response_format: {
 			type: "text",
 		},
