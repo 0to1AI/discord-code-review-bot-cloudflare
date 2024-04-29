@@ -26,17 +26,21 @@ export const unpackThrowable = <T>(throwable: () => T): ThrowableToTupleResult<T
 	}
 };
 
+function invariant(condition: unknown, message: string): asserts condition {
+	if (!condition) {
+		throw new Error(message);
+	}
+}
+
 export function stringToUint8Array(value: string, format?: "hex"): Uint8Array {
 	if (!value) {
 		return new Uint8Array();
 	}
 
 	if (format === "hex") {
-		const matches = value.match(/.{1,2}/g);
-		if (!matches) {
-			throw new Error("Value is not a valid hex string");
-		}
-		const hexVal = matches.map((byte) => parseInt(byte, 16));
+		const octets = /^[a-fA-F0-9]+$/.test(value) && value.match(/.{1,2}/g);
+		invariant(octets, "Value is not a valid hex string");
+		const hexVal = octets.map((byte) => Number.parseInt(byte, 16));
 		return new Uint8Array(hexVal);
 	}
 
@@ -44,8 +48,8 @@ export function stringToUint8Array(value: string, format?: "hex"): Uint8Array {
 }
 
 export function concatUint8Arrays(arr1: Uint8Array, arr2: Uint8Array): Uint8Array {
-	const merged = new Uint8Array(arr1.length + arr2.length);
-	merged.set(arr1);
-	merged.set(arr2, arr1.length);
-	return merged;
+	const newArray = new Uint8Array(arr1.length + arr2.length);
+	newArray.set(arr1);
+	newArray.set(arr2, arr1.length);
+	return newArray;
 }
